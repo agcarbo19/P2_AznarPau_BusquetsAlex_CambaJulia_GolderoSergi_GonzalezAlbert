@@ -16,6 +16,7 @@ public class RandomLocationGenerator  {
 
         // get all the patrol points
         patrolPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("PATROLPOINT"));
+        Debug.Log(patrolPoints.Capacity);
     } 
 
     public static Vector3 RandomWalkableLocation ()

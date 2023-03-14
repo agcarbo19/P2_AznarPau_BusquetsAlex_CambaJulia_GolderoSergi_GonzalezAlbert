@@ -7,13 +7,13 @@ public class FSM_Mouse : FiniteStateMachine
 {
     private MOUSE_Blackboard mouseBlackboard;
     private RandomLocationGenerator randomLocationGenerator;
-
+    private GoToTarget goTarget; 
 
     public override void OnEnter()
     {   
         mouseBlackboard = GetComponent<MOUSE_Blackboard>();
-        randomLocationGenerator = GetComponent<RandomLocationGenerator>();
-
+        //randomLocationGenerator = GetComponent<RandomLocationGenerator>();
+        goTarget = GetComponent<GoToTarget>();
         base.OnEnter();
     }
 
@@ -28,9 +28,12 @@ public class FSM_Mouse : FiniteStateMachine
         //GoingToRandomLocation, Pooping, GoingToExitLocation, Scared
 
         State GoingToRandomLocation = new State("GoingToRandomLocation",
-            () => { },
+            () => { goTarget.target.transform.position = RandomLocationGenerator.RandomWalkableLocation();  },
             () => { },
             () => { }
             );
+
+        AddStates(GoingToRandomLocation);
+        initialState = GoingToRandomLocation;
     }
 }
