@@ -26,6 +26,7 @@ public class roombaBlackboard : MonoBehaviour
 
     public List<GameObject> memory; // list of detected dust units not picked due to presence of poo
                                     // or other events
+
     public List<GameObject> chargingStations; 
 
     public GameObject[] wayPoints;

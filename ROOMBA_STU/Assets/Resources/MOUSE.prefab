@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4727276683208836}
   - component: {fileID: 212316770444765834}
-  - component: {fileID: 7893544092955988842}
   - component: {fileID: 114462393164921940}
   - component: {fileID: 2489265465029441954}
   - component: {fileID: 7214175116795006240}
   - component: {fileID: 7763284725603348557}
   - component: {fileID: -6025817320332240327}
+  - component: {fileID: 677926495011263120}
   m_Layer: 0
   m_Name: MOUSE
   m_TagString: Untagged
@@ -90,20 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7893544092955988842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752029864694060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0fa918f6936c94299a6a671bd3eac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooPrefab: {fileID: 1446901862862190, guid: 9082e5f6daa6cbd49852a647c70d3a8c, type: 3}
-  roombaDetectionRadius: 50
 --- !u!114 &114462393164921940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823459bfcabf59e4bbb7d30c1033e0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fsm: {fileID: 11400000, guid: 646d612c047b4d147a11e4a35470e5d9, type: 2}
+  fsm: {fileID: 11400000, guid: bf64d135f8e374f44a08b03ea09c1189, type: 2}
   currentState: 
   textMesh: {fileID: 0}
 --- !u!114 &-6025817320332240327
@@ -229,3 +215,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &677926495011263120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752029864694060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1dc397ab7bb2548973160455eafd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints: []
+  pooPrefab: {fileID: 0}
+  hideout: {fileID: 0}
+  pooTarget: {fileID: 0}
+  roombaDetectionRadius: 50
+  pooPlaceRadius: 15
+  hideoutReachedRadius: 15
+  speedBooster: 2
+  accBooster: 4

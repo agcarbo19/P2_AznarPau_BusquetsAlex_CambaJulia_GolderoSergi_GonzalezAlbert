@@ -11,14 +11,14 @@ public class sceneController : MonoBehaviour
 
     private float maxDustSpawnTimer = 5f;
     private float dustSpawnTimer = 0f;
-    private float maxRandomMiceSpawnTimer = 20f;
-    private float minRandomMiceSpawnTimer = 30f;
+    private float maxRandomMiceSpawnTimer = 50f;
+    private float minRandomMiceSpawnTimer = 10f;
     private float randomMiceSpawnTimer;
     private float miceSpawnTimer = 0f;
 
     public GameObject[] entryAndExitPoints;
-    public float random; 
-    
+    public float random;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,20 +37,20 @@ public class sceneController : MonoBehaviour
         dustSpawnTimer += Time.deltaTime;
         if (dustSpawnTimer >= maxDustSpawnTimer)
         {
-            dustSpawn();
+            DustSpawn();
         }
 
         miceSpawnTimer += Time.deltaTime;
         if (miceSpawnTimer >= randomMiceSpawnTimer)
         {
-            miceSpawn();
+            MiceSpawner();
         }
 
     }
 
 
 
-    public void miceSpawn()
+    public void MiceSpawner()
     {
         Instantiate(micePrefab, entryAndExitPoints[Random.Range(0, entryAndExitPoints.Length - 1)].transform.position, Quaternion.identity);
         miceSpawnTimer = 0;
@@ -59,7 +59,7 @@ public class sceneController : MonoBehaviour
     }
 
 
-    public void dustSpawn()
+    public void DustSpawn()
     {
         dustParticle.GetComponent<SpriteRenderer>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
         Instantiate(dustParticle, RandomLocationGenerator.RandomWalkableLocation(), Quaternion.identity);
